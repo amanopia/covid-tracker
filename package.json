@@ -10,6 +10,7 @@
   "author": "Aman Verma",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^3.6.0",
     "express": "^4.17.1"
   }
 }

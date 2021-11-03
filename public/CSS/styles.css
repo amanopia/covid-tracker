@@ -1,4 +1,9 @@
-
+body {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .main-headings {
   font-family: "Poppins";
   font-size: 4em;
