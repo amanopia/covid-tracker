@@ -25,28 +25,15 @@ app.get("/", function(req,res){
 // Handling Post
 app.post("/", function(req,res){
   console.log("Post request received");
-  const apiUrl = "https://data.covid19india.org/data.json";
-  // const apiUrl = 'https://api.covid19india.org/';
-  // responding to post rrequest with data from api by making a get request
+  const apiUrl = "https://disease.sh/v3/covid-19/gov/India?allowNull=Delhi";
   https.get(apiUrl, function(response){
     console.log("Satus code (api): ", res.statusCode);
-    // console.log("Headers: ", res.headers);
-
-    // parsing the data
     response.on("data", function(data){
-      // data in its raw form
-      console.log(data);
-      process.stdout.write(data);
-      var covidDataStr = [data];
-      console.log(JSON.parse(covidDataStr));
-      // data in its processed form
-      // const covidData = JSON.parse(data);
-      // console.log(data);
-      res.write(data);
+      const testing = JSON.parse(data);
+      console.log(testing);
     });
   });
 });
-// Static Files
 
 app.listen(port, function(){
   console.info(`Server started on port ${port}`);
