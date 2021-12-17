@@ -1,0 +1,10 @@
+Calendar Video: https://www.youtube.com/watch?v=eOEX09sfhpM
+Exporting in Node: https://www.freecodecamp.org/news/node-module-exports-explained-with-javascript-export-function-examples/#:~:text=There's%20another%20way%20of%20exporting,properties%20of%20the%20default%20module.
+Using Cheerio.js: https://www.youtube.com/watch?v=LoziivfAAjE
+
+list -> form data -> post request -> comes into server.js -> use export module on variable -> import into server.js -> generate graph
+
+Note:
+Having trouble importing functions from server.js file, however the import from other files into the server.js file is working fine
+Solution:
+To use import statements  in a file there shouldn't be any other export statements in the file above that import statement
