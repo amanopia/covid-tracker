@@ -41,9 +41,9 @@ app.post("/", function(req,res){
   // const apiUrl = "https://disease.sh/v3/covid-19/gov/India?allowNull=Delhi";
   const apiUrl = "https://data.covid19india.org/data.json";
   fetch(apiUrl).then(res => res.json()).then(json => {
-    console.log(json.cases_time_series[0].date);
-
+    // console.log(json);
   });
+  console.log(req.body);
 });
 // This data will only be printed when we will be making a post request, i.e., pressing a button, but what we have to do is
 

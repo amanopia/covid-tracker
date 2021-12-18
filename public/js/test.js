@@ -2,7 +2,7 @@
 
 // import {name1} from "./server.js";
 // console.log(name1);
-import {name1} from "./server.js";
+// import {name1} from "./server.js";
 // const myArea = axe(9);
 // console.log(myArea);
 // console.log(name1);
@@ -26,10 +26,33 @@ function myFunction() {
     }
   }
 }
+function jsonparse(data, req){
+  var key, count = 0;
+  for(const key in data.statewise){
+    if(data.hasOwnProperty(key)){
+      count++;
+    }
+    if (req == data.statewise[key].state){
+      return data.statewise[key];
+    }
+
+  }
+
+}
 $(document).ready(function(){
   var url = "https://data.covid19india.org/data.json";
   $.getJSON(url, function(data){
-    console.log(data);
+    const formdata = document.getElementById("city_list");
+    formdata.addEventListener("submit", function(event){
+      event.preventDefault();
+      sendData();
+      var d = document.getElementById('city_name').value;
+      console.log(d);
+    });
+    var req = "Assam";
+    var states = jsonparse(data, req);
+    console.log(states);
+
     var total_active, total_confirmed, total_recovered, total_deceased;
     var total_active_all = [];
 
